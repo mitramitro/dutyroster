@@ -28,10 +28,8 @@
                 <option value="HSSE" {{ $employee->fungsi == 'HSSE' ? 'selected' : '' }}>HSSE</option>
                 <option value="MPS" {{ $employee->fungsi == 'MPS' ? 'selected' : '' }}>MPS</option>
                 <option value="SSGA/QQ" {{ $employee->fungsi == 'SSGA/QQ' ? 'selected' : '' }}>SSGA/QQ</option>
-                <option value="RSD Fuel Pagi" {{ $employee->fungsi == 'RSD Fuel Pagi' ? 'selected' : '' }}>RSD Fuel Pagi</option>
-                <option value="RSD Fuel Sore" {{ $employee->fungsi == 'RSD Fuel Sore' ? 'selected' : '' }}>RSD Fuel Sore</option>
-                <option value="RSD LPG Pagi" {{ $employee->fungsi == 'RSD LPG Pagi' ? 'selected' : '' }}>RSD LPG Pagi</option>
-                <option value="RSD LPG Sore" {{ $employee->fungsi == 'RSD LPG Sore' ? 'selected' : '' }}>RSD LPG Sore</option>
+                <option value="RSD" {{ $employee->fungsi == 'RSD' ? 'selected' : '' }}>RSD</option>
+                
             </select>
         </div>
 

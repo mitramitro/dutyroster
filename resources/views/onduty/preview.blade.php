@@ -25,8 +25,9 @@
     <div class="row justify-content-center" style="display: flex; flex-wrap: wrap; gap: 20px;">
         <div class="col-md-3" style="border:1px solid #ccc; border-radius:8px; padding:10px; min-width:180px;">
             <h5 class="text-danger" style="font-weight: bold;">HSSE</h5>
-            <p class="mb-0" style="font-weight: bold;">{{ $onduty->hsse->nama }}</p>
-            <p class="mb-1">{{ $onduty->hsse->nohp }}</p>
+            <p class="mb-0" style="font-weight: bold;">{{ $onduty->hssePagi->nama }}</p>
+            <p class="mb-0" style="font-weight: bold;">{{ $onduty->hsseSore->nama }}</p>
+            {{-- <p class="mb-1">{{ $onduty->hsse->nohp }}</p> --}}
         </div>
 
         <div class="col-md-3" style="border:1px solid #ccc; border-radius:8px; padding:10px; min-width:180px;">

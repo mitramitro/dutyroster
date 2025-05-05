@@ -15,7 +15,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::resource('users', UserController::class);
 // Route::middleware(['auth'])->group(function () {
 
-Route::resource('onduty', OnDutyRosterController::class);
+Route::resource('onduty', OnDutyRosterController::class)->except(['show']);
 Route::resource('employees', EmployeeController::class);
 Route::resource('locations', LocationController::class);
 Route::get('/preview/{id}', [OnDutyRosterController::class, 'preview'])->name('onduty.preview');

@@ -74,9 +74,20 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="hsse_id">HSSE</label>
-                    <select name="hsse_id" class="form-control" required>
-                        <option value="">Pilih HSSE</option>
+                    <label for="hsse_pagi_id">HSSE Pagi</label>
+                    <select name="hsse_pagi_id" class="form-control" required>
+                        <option value="">Pilih HSSE Pagi</option>
+                        @foreach($employees as $employee)
+                            @if($employee->fungsi == 'HSSE' && optional($employee->location)->nama_lokasi == $userOffice)
+                                <option value="{{ $employee->id }}">{{ $employee->nama }}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="hsse_sore_id">HSSE Sore</label>
+                    <select name="hsse_sore_id" class="form-control" required>
+                        <option value="">Pilih HSSE Sore</option>
                         @foreach($employees as $employee)
                             @if($employee->fungsi == 'HSSE' && optional($employee->location)->nama_lokasi == $userOffice)
                                 <option value="{{ $employee->id }}">{{ $employee->nama }}</option>
@@ -111,7 +122,7 @@
                     <select name="rsd_fuel_pagi_id" class="form-control" required>
                         <option value="">Pilih RSD Fuel Pagi</option>
                         @foreach($employees as $employee)
-                            @if($employee->fungsi == 'RSD Fuel Pagi' && optional($employee->location)->nama_lokasi == $userOffice)
+                            @if($employee->fungsi == 'RSD' && optional($employee->location)->nama_lokasi == $userOffice)
                                 <option value="{{ $employee->id }}">{{ $employee->nama }}</option>
                             @endif
                         @endforeach
@@ -122,7 +133,7 @@
                     <select name="rsd_fuel_sore_id" class="form-control" required>
                         <option value="">Pilih RSD Fuel Sore</option>
                         @foreach($employees as $employee)
-                            @if($employee->fungsi == 'RSD Fuel Sore' && optional($employee->location)->nama_lokasi == $userOffice)
+                            @if($employee->fungsi == 'RSD' && optional($employee->location)->nama_lokasi == $userOffice)
                                 <option value="{{ $employee->id }}">{{ $employee->nama }}</option>
                             @endif
                         @endforeach
@@ -133,7 +144,7 @@
                     <select name="rsd_lpg_pagi_id" class="form-control" required>
                         <option value="">Pilih RSD LPG Pagi</option>
                         @foreach($employees as $employee)
-                            @if($employee->fungsi == 'RSD LPG Pagi' && optional($employee->location)->nama_lokasi == $userOffice)
+                            @if($employee->fungsi == 'RSD' && optional($employee->location)->nama_lokasi == $userOffice)
                                 <option value="{{ $employee->id }}">{{ $employee->nama }}</option>
                             @endif
                         @endforeach
@@ -144,7 +155,7 @@
                     <select name="rsd_lpg_sore_id" class="form-control" required>
                         <option value="">Pilih RSD LPG Sore</option>
                         @foreach($employees as $employee)
-                            @if($employee->fungsi == 'RSD LPG Sore' && optional($employee->location)->nama_lokasi == $userOffice)
+                            @if($employee->fungsi == 'RSD' && optional($employee->location)->nama_lokasi == $userOffice)
                                 <option value="{{ $employee->id }}">{{ $employee->nama }}</option>
                             @endif
                         @endforeach

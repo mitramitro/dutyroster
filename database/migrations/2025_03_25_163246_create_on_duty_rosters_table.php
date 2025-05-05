@@ -12,7 +12,8 @@ return new class extends Migration {
             $table->date('tanggal');
             $table->foreignId('location_id')->constrained('locations')->onDelete('cascade'); // Asumsi tabel `lokasi`
             $table->foreignId('manager_on_duty_id')->constrained('employees')->onDelete('cascade'); // Asumsi tabel `employees`
-            $table->foreignId('hsse_id')->constrained('employees')->onDelete('cascade');
+            $table->foreignId('hsse_pagi_id')->constrained('employees')->onDelete('cascade');
+            $table->foreignId('hsse_sore_id')->constrained('employees')->onDelete('cascade');
             $table->foreignId('mps_id')->constrained('employees')->onDelete('cascade');
             $table->foreignId('ssga_qq_id')->constrained('employees')->onDelete('cascade');
             $table->foreignId('rsd_fuel_pagi_id')->constrained('employees')->onDelete('cascade');

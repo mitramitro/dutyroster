@@ -109,10 +109,12 @@ h1, h2, h3, p {
 </div>
 
     <div class="row">
-        <div class="col-md-3">
+        <<div class="col-md-3">
             <h3 class="text-danger">HSSE</h3>
-            <h4>{{ $onduty->hsse->nama }}</h4>
-            <p>{{ $onduty->hsse->nohp }}</p>
+            <h4>{{ $onduty->hssePagi->nama }} (P)</h4>
+            <!--<p>{{ $onduty->hssePagi->nohp }}</p>-->
+            <h4>{{ $onduty->hsseSore->nama }} (S)</h4>
+            <!--<p>{{ $onduty->hsseSore->nohp }}</p>-->
         </div>
         <div class="col-md-3">
             <h3 class="text-danger">MPS</h3>

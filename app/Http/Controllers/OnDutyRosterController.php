@@ -33,7 +33,8 @@ class OnDutyRosterController extends Controller
             $onDutyRosters = OnDutyRoster::with([
                 'location',
                 'managerOnDuty',
-                'hsse',
+                'hssePagi',
+                'hsseSore',
                 'mps',
                 'ssgaQq',
                 'rsdFuelPagi',
@@ -58,7 +59,8 @@ class OnDutyRosterController extends Controller
                 })
                 ->addColumn('lokasi', fn($row) => $row->location->nama_lokasi ?? '-')
                 ->addColumn('manager_on_duty', fn($row) => $row->managerOnDuty->nama ?? '-')
-                ->addColumn('hsse', fn($row) => $row->hsse->nama ?? '-')
+                ->addColumn('hsse_pagi', fn($row) => $row->hssePagi->nama ?? '-')
+                ->addColumn('hsse_sore', fn($row) => $row->hsseSore->nama ?? '-')
                 ->addColumn('mps', fn($row) => $row->mps->nama ?? '-')
                 ->addColumn('ssga_qq', fn($row) => $row->ssgaQq->nama ?? '-')
                 ->addColumn('rsd_fuel_pagi', fn($row) => $row->rsdFuelPagi->nama ?? '-')
@@ -92,12 +94,15 @@ class OnDutyRosterController extends Controller
      * Menyimpan data On Duty Roster baru.
      */
     public function store(Request $request)
+    // Validasi data yang diterima dari form
     {
+        // dd($request->all());
         $request->validate([
             'tanggal' => 'required|date',
             'location_id' => 'required|exists:locations,id',
             'manager_on_duty_id' => 'required|exists:employees,id',
-            'hsse_id' => 'required|exists:employees,id',
+            'hsse_pagi_id' => '',
+            'hsse_sore_id' => '',
             'mps_id' => 'required|exists:employees,id',
             'ssga_qq_id' => 'required|exists:employees,id',
             'rsd_fuel_pagi_id' => 'required|exists:employees,id',
@@ -116,7 +121,8 @@ class OnDutyRosterController extends Controller
      */
     public function show(OnDutyRoster $onDutyRoster)
     {
-        return view('onduty.show', compact('onDutyRoster'));
+        // return view('onduty.show', compact('onDutyRoster'));
+        abort(404);
     }
 
     /**
@@ -140,7 +146,8 @@ class OnDutyRosterController extends Controller
             'tanggal' => 'required|date',
             'location_id' => 'required|exists:locations,id',
             'manager_on_duty_id' => 'required|exists:employees,id',
-            'hsse_id' => 'required|exists:employees,id',
+            'hsse_pagi_id' => 'required|exists:employees,id',
+            'hsse_sore_id' => 'required|exists:employees,id',
             'mps_id' => 'required|exists:employees,id',
             'ssga_qq_id' => 'required|exists:employees,id',
             'rsd_fuel_pagi_id' => 'required|exists:employees,id',
@@ -170,7 +177,8 @@ class OnDutyRosterController extends Controller
         $onduty = OnDutyRoster::with([
             'location',
             'managerOnDuty',
-            'hsse',
+            'hssePagi',
+            'hsseSore',
             'mps',
             'ssgaQq',
             'rsdFuelPagi',
@@ -184,12 +192,14 @@ class OnDutyRosterController extends Controller
 
     public function publishDisplay(Request $request)
     {
+
         $office = $request->query('office');
         // Filter data duty roster dengan status publish 'published' dan lokasi sesuai parameter
         $onduty = OnDutyRoster::with([
             'location',
             'managerOnDuty',
-            'hsse',
+            'hssePagi',
+            'hsseSore',
             'mps',
             'ssgaQq',
             'rsdFuelPagi',

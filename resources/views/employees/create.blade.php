@@ -45,10 +45,7 @@
                     <option value="HSSE">HSSE</option>
                     <option value="MPS">MPS</option>
                     <option value="SSGA/QQ">SSGA/QQ</option>
-                    <option value="RSD Fuel Pagi">RSD Fuel Pagi</option>
-                    <option value="RSD Fuel Sore">RSD Fuel Sore</option>
-                    <option value="RSD LPG Pagi">RSD LPG Pagi</option>
-                    <option value="RSD LPG Sore">RSD LPG Sore</option>
+                    <option value="RSD">RSD</option>
                 </select>
             </div>
             <div class="form-group">

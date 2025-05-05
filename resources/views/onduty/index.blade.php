@@ -74,7 +74,8 @@
                              <th>Tanggal</th>
                              <th>Lokasi</th>
                              <th>Manager on Duty</th>
-                             <th>HSSE</th>
+                             <th>HSSE Pagi</th>
+                             <th>HSSE Sore</th>
                              <th>MPS</th>
                              <th>SSGA/QQ</th>
                              <th>RSD Fuel Pagi</th>
@@ -137,19 +138,21 @@
                     <a href="javascript:void(0);" onclick="togglePublish(${row.id}, ${row.is_published})" class="btn btn-link" title="${toggleTitle}">
                         <i class="fas ${toggleIcon}"></i>
                     </a>
+                     <!--
                     <a href="{{ route('onduty.preview', '') }}/${row.id}"
                     class="btn btn-link text-success"
                     title="Preview"
                     >
                         <i class="fas fa-eye"></i>
-                    </a>
+                    </a> -->
                 `;
             }
         },
         { data: 'tanggal', name: 'tanggal' },
         { data: 'lokasi', name: 'lokasi' },
         { data: 'manager_on_duty', name: 'managerOnDuty' },
-        { data: 'hsse', name: 'hsse' },
+        { data: 'hsse_pagi', name: 'hssePagi' },
+        { data: 'hsse_sore', name: 'hsseSore' },
         { data: 'mps', name: 'mps' },
         { data: 'ssga_qq', name: 'ssgaQq' },
         { data: 'rsd_fuel_pagi', name: 'rsdFuelPagi' },

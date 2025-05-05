@@ -17,7 +17,8 @@ class OnDutyRoster extends Model
         'tanggal',
         'location_id',
         'manager_on_duty_id',
-        'hsse_id',
+        'hsse_pagi_id',
+        'hsse_sore_id',
         'mps_id',
         'ssga_qq_id',
         'rsd_fuel_pagi_id',
@@ -43,9 +44,13 @@ class OnDutyRoster extends Model
         return $this->belongsTo(Employee::class, 'manager_on_duty_id');
     }
 
-    public function hsse()
+    public function hssePagi()
     {
-        return $this->belongsTo(Employee::class, 'hsse_id');
+        return $this->belongsTo(Employee::class, 'hsse_pagi_id');
+    }
+    public function hsseSore()
+    {
+        return $this->belongsTo(Employee::class, 'hsse_sore_id');
     }
 
     public function mps()

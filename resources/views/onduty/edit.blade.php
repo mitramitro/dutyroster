@@ -52,32 +52,34 @@
                 </div>
 
                 @php
-                    $roles = [
-                        'manager_on_duty_id' => 'Manager',
-                        'hsse_id' => 'HSSE',
-                        'mps_id' => 'MPS',
-                        'ssga_qq_id' => 'SSGA/QQ',
-                        'rsd_fuel_pagi_id' => 'RSD Fuel Pagi',
-                        'rsd_fuel_sore_id' => 'RSD Fuel Sore',
-                        'rsd_lpg_pagi_id' => 'RSD LPG Pagi',
-                        'rsd_lpg_sore_id' => 'RSD LPG Sore',
-                    ];
+                $roles = [
+                    'manager_on_duty_id' => ['label' => 'Manager', 'fungsi' => 'Manager'],
+                    'hsse_pagi_id' => ['label' => 'HSSE PAGI', 'fungsi' => 'HSSE'],
+                    'hsse_sore_id' => ['label' => 'HSSE SORE', 'fungsi' => 'HSSE'],
+                    'mps_id' => ['label' => 'MPS', 'fungsi' => 'MPS'],
+                    'ssga_qq_id' => ['label' => 'SSGA/QQ', 'fungsi' => 'SSGA/QQ'],
+                    'rsd_fuel_pagi_id' => ['label' => 'RSD Fuel Pagi', 'fungsi' => 'RSD'],
+                    'rsd_fuel_sore_id' => ['label' => 'RSD Fuel Sore', 'fungsi' => 'RSD'],
+                    'rsd_lpg_pagi_id' => ['label' => 'RSD LPG Pagi', 'fungsi' => 'RSD'],
+                    'rsd_lpg_sore_id' => ['label' => 'RSD LPG Sore', 'fungsi' => 'RSD'],
+                ];
                 @endphp
 
-                @foreach($roles as $field => $fungsi)
-                <div class="form-group">
-                    <label for="{{ $field }}">{{ $fungsi }}</label>
-                    <select name="{{ $field }}" class="form-control" required>
-                        <option value="">Pilih {{ $fungsi }}</option>
-                        @foreach($employees as $employee)
-                            @if($employee->fungsi == $fungsi && optional($employee->location)->nama_lokasi == $userLocation)
-                                <option value="{{ $employee->id }}" {{ $onDutyRoster->$field == $employee->id ? 'selected' : '' }}>
-                                    {{ $employee->nama }}
-                                </option>
-                            @endif
-                        @endforeach
-                    </select>
-                </div>
+
+                @foreach($roles as $field => $info)
+                    <div class="form-group">
+                        <label for="{{ $field }}">{{ $info['label'] }}</label>
+                        <select name="{{ $field }}" class="form-control" required>
+                            <option value="">Pilih {{ $info['label'] }}</option>
+                            @foreach($employees as $employee)
+                                @if($employee->fungsi == $info['fungsi'] && optional($employee->location)->nama_lokasi == $userLocation)
+                                    <option value="{{ $employee->id }}" {{ $onDutyRoster->$field == $employee->id ? 'selected' : '' }}>
+                                        {{ $employee->nama }}
+                                    </option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
                 @endforeach
 
                 <div class="form-group mt-3">
