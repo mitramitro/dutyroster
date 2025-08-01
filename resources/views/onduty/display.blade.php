@@ -81,6 +81,39 @@ h1, h2, h3, p {
     border-radius: 6px;
     min-width: 250px;
 }
+@media (max-width: 768px) {
+    .onduty-container {
+        height: auto; /* jangan pakai 100vh di mobile */
+        min-height: 100vh;
+        overflow-y: auto; /* biar bisa scroll */
+        align-items: flex-start; /* konten mulai dari atas */
+        padding: 10px 0;
+    }
+
+    .container {
+        max-height: none;
+        overflow-y: visible;
+        padding-bottom: 20px;
+    }
+
+    .manager-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1, h2, h3, p {
+        font-size: clamp(10px, 3.5vw, 18px);
+    }
+
+    .col-md-3 {
+        flex: 1 1 90%;
+        min-width: unset;
+    }
+
+    .row {
+        gap: 12px;
+    }
+}
 </style>
 @endpush
 
