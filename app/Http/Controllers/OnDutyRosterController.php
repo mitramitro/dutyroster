@@ -164,13 +164,27 @@ class OnDutyRosterController extends Controller
     /**
      * Menghapus On Duty Roster.
      */
-    public function destroy(OnDutyRoster $onDutyRoster)
+    public function destroy(OnDutyRoster $onduty)
     {
-        $onDutyRoster->delete();
-
-        return redirect()->route('onduty.index')->with('success', 'On Duty Roster berhasil dihapus.');
+        $onduty->delete();
+        return response()->json(['success' => true]);
     }
+    // public function destroy(OnDutyRoster $onDutyRoster)
+    // {
+    //     try {
+    //         $onDutyRoster->delete();
 
+    //         return response()->json([
+    //             'status' => 'success',
+    //             'message' => 'On Duty Roster berhasil dihapus.'
+    //         ]);
+    //     } catch (\Exception $e) {
+    //         return response()->json([
+    //             'status' => 'error',
+    //             'message' => 'Gagal menghapus data: ' . $e->getMessage()
+    //         ], 500);
+    //     }
+    // }
 
     public function preview($id)
     {

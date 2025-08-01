@@ -74,7 +74,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="hsse_pagi_id">HSSE Pagi</label>
+                    <label for="hsse_pagi_id">HSSE</label>
                     <select name="hsse_pagi_id" class="form-control" required>
                         <option value="">Pilih HSSE Pagi</option>
                         @foreach($employees as $employee)

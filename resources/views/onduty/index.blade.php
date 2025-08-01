@@ -70,7 +70,7 @@
                     <table id="onduty-table" class="display table table-striped table-hover" style="width:100%;">
                        <thead>
                           <tr>
-                             <th>Aksi</th>
+                             <th>Aksi ok</th>
                              <th>Tanggal</th>
                              <th>Lokasi</th>
                              <th>Manager on Duty</th>
@@ -170,7 +170,6 @@
     }
 });
     
-            // Fungsi untuk delete
             window.delConfirm = function(id) {
                 swal({
                     title: 'Apakah anda yakin?',
@@ -182,8 +181,11 @@
                     if (willDelete) {
                         $.ajax({
                             headers: { "X-CSRF-TOKEN": '{{ csrf_token() }}' },
-                            type: "DELETE",
-                            url: "{{ route('onduty.destroy', '') }}/" + id,
+                            type: "POST", // kirim sebagai POST
+                            url: "/onduty/" + id,
+                            data: {
+                                _method: "DELETE" // spoof jadi DELETE agar Laravel terima
+                            },
                             success: function(response) {
                                 swal('Berhasil', 'Data berhasil dihapus!', 'success')
                                     .then(() => table.ajax.reload());
@@ -199,7 +201,44 @@
                     }
                 });
             }
-    
+    // window.delConfirm = function(id) {
+    //     swal({
+    //         title: 'Apakah anda yakin?',
+    //         text: 'Data ini akan dihapus secara permanen!',
+    //         icon: 'warning',
+    //         buttons: true,
+    //         dangerMode: true
+    //     }).then((willDelete) => {
+    //         if (willDelete) {
+    //             $.ajax({
+    //                 headers: {
+    //                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
+    //                 },
+    //                 type: 'DELETE',
+    //                 url: '{{ url('onduty') }}/' + id,
+    //                 success: function(response) {
+    //                     swal('Berhasil', response.message, 'success')
+    //                         .then(() => {
+    //                             // Reload DataTable kalau pakai datatables
+    //                             if (typeof table !== 'undefined') {
+    //                                 table.ajax.reload();
+    //                             } else {
+    //                                 location.reload();
+    //                             }
+    //                         });
+    //                 },
+    //                 error: function(xhr) {
+    //                     let errorMsg = 'Terjadi kesalahan. Silakan coba lagi.';
+    //                     if (xhr.responseJSON && xhr.responseJSON.message) {
+    //                         errorMsg = xhr.responseJSON.message;
+    //                     }
+    //                     swal('Gagal', errorMsg, 'error');
+    //                 }
+    //             });
+    //         }
+    //     });
+    // };
+
             // Fungsi untuk toggle publish
           // Fungsi untuk toggle publish/unpublish
             window.togglePublish = function(id, isPublished) {
