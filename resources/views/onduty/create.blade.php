@@ -84,7 +84,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="hsse_sore_id">HSSE Sore</label>
                     <select name="hsse_sore_id" class="form-control" required>
                         <option value="">Pilih HSSE Sore</option>
@@ -94,7 +94,7 @@
                             @endif
                         @endforeach
                     </select>
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label for="mps_id">MPS</label>
                     <select name="mps_id" class="form-control" required>

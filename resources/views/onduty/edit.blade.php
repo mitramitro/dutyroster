@@ -55,7 +55,7 @@
                 $roles = [
                     'manager_on_duty_id' => ['label' => 'Manager', 'fungsi' => 'Manager'],
                     'hsse_pagi_id' => ['label' => 'HSSE PAGI', 'fungsi' => 'HSSE'],
-                    'hsse_sore_id' => ['label' => 'HSSE SORE', 'fungsi' => 'HSSE'],
+                    // 'hsse_sore_id' => ['label' => 'HSSE SORE', 'fungsi' => 'HSSE'],
                     'mps_id' => ['label' => 'MPS', 'fungsi' => 'MPS'],
                     'ssga_qq_id' => ['label' => 'SSGA/QQ', 'fungsi' => 'SSGA/QQ'],
                     'rsd_fuel_pagi_id' => ['label' => 'RSD Fuel Pagi', 'fungsi' => 'RSD'],

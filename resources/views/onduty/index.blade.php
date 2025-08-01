@@ -75,7 +75,7 @@
                              <th>Lokasi</th>
                              <th>Manager on Duty</th>
                              <th>HSSE Pagi</th>
-                             <th>HSSE Sore</th>
+                             {{-- <th>HSSE Sore</th> --}}
                              <th>MPS</th>
                              <th>SSGA/QQ</th>
                              <th>RSD Fuel Pagi</th>
@@ -152,7 +152,7 @@
         { data: 'lokasi', name: 'lokasi' },
         { data: 'manager_on_duty', name: 'managerOnDuty' },
         { data: 'hsse_pagi', name: 'hssePagi' },
-        { data: 'hsse_sore', name: 'hsseSore' },
+        // { data: 'hsse_sore', name: 'hsseSore' },
         { data: 'mps', name: 'mps' },
         { data: 'ssga_qq', name: 'ssgaQq' },
         { data: 'rsd_fuel_pagi', name: 'rsdFuelPagi' },
