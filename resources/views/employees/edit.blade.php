@@ -27,7 +27,7 @@
                 <option value="Manager" {{ $employee->fungsi == 'Manager' ? 'selected' : '' }}>Manager</option>
                 <option value="HSSE" {{ $employee->fungsi == 'HSSE' ? 'selected' : '' }}>HSSE</option>
                 <option value="MPS" {{ $employee->fungsi == 'MPS' ? 'selected' : '' }}>MPS</option>
-                <option value="SSGA/QQ" {{ $employee->fungsi == 'SSGA/QQ' ? 'selected' : '' }}>SSGA/QQ</option>
+                <option value="SSGA/QQ" {{ $employee->fungsi == 'SSGA/QQ' ? 'selected' : '' }}>GOSF/QQ</option>
                 <option value="RSD" {{ $employee->fungsi == 'RSD' ? 'selected' : '' }}>RSD</option>
                 
             </select>

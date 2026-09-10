@@ -155,7 +155,7 @@ h1, h2, h3, p {
             <p>{{ $onduty->mps->nohp }}</p>
         </div>
         <div class="col-md-3">
-            <h3 class="text-danger">SSGA/QQ</h3>
+            <h3 class="text-danger">GOSF/QQ</h3>
             <h4>{{ $onduty->ssgaQq->nama }}</h4>
             <p>{{ $onduty->ssgaQq->nohp }}</p>
         </div>

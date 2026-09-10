@@ -44,7 +44,7 @@
                     <option value="Manager">Manager</option>
                     <option value="HSSE">HSSE</option>
                     <option value="MPS">MPS</option>
-                    <option value="SSGA/QQ">SSGA/QQ</option>
+                    <option value="SSGA/QQ">GOSF/QQ</option>
                     <option value="RSD">RSD</option>
                 </select>
             </div>

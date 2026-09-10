@@ -107,9 +107,9 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="ssga_qq_id">SSGA/QQ</label>
+                    <label for="ssga_qq_id">GOSF/QQ</label>
                     <select name="ssga_qq_id" class="form-control" required>
-                        <option value="">Pilih SSGA/QQ</option>
+                        <option value="">Pilih GOSF/QQ</option>
                         @foreach($employees as $employee)
                             @if($employee->fungsi == 'SSGA/QQ' && optional($employee->location)->nama_lokasi == $userOffice)
                                 <option value="{{ $employee->id }}">{{ $employee->nama }}</option>

@@ -77,7 +77,7 @@
                              <th>HSSE Pagi</th>
                              {{-- <th>HSSE Sore</th> --}}
                              <th>MPS</th>
-                             <th>SSGA/QQ</th>
+                             <th>GOSF/QQ</th>
                              <th>RSD Fuel Pagi</th>
                              <th>RSD Fuel Sore</th>
                              <th>RSD LPG Pagi</th>

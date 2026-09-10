@@ -21,7 +21,7 @@
         <p style="margin-bottom: 0;">{{ $onduty->managerOnDuty->nohp }}</p>
     </div>
 
-    <!-- Baris Tim Bagian 1: HSSE, MPS, SSGA/QQ -->
+    <!-- Baris Tim Bagian 1: HSSE, MPS, GOSF/QQ -->
     <div class="row justify-content-center" style="display: flex; flex-wrap: wrap; gap: 20px;">
         <div class="col-md-3" style="border:1px solid #ccc; border-radius:8px; padding:10px; min-width:180px;">
             <h5 class="text-danger" style="font-weight: bold;">HSSE</h5>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="col-md-3" style="border:1px solid #ccc; border-radius:8px; padding:10px; min-width:180px;">
-            <h5 class="text-danger" style="font-weight: bold;">SSGA/QQ</h5>
+            <h5 class="text-danger" style="font-weight: bold;">GOSF/QQ</h5>
             <p class="mb-0" style="font-weight: bold;">{{ $onduty->ssgaQq->nama }}</p>
             <p class="mb-1">{{ $onduty->ssgaQq->nohp }}</p>
         </div>
